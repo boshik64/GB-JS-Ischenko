@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка формы дз-3 </title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <p id="message">Пожалуйста, заполните все поля формы!</p>
+    E-mail:<br /> <input id="email" name="email" type="text" size="20" /><br />
+
+    Телефон: <br /> <input id="phone" name="phone" type="num" size="20" maxlength="11" /><br /> <br />
+
+    Комментарий: <br /> <textarea name="comment" id="comment" cols="20" rows="10"></textarea><br /> <br />
+
+
+    <input name="button" type="submit" value="Проверить" onClick="ValidMail(); ValidPhone(); ValidComment();" />
+</body>
+</html>

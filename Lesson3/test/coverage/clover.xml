@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1644841237056" clover="3.2.0">
+  <project timestamp="1644841237056" name="All files">
+    <metrics statements="15" coveredstatements="15" conditionals="12" coveredconditionals="12" methods="1" coveredmethods="1" elements="28" coveredelements="28" complexity="0" loc="15" ncloc="15" packages="1" files="1" classes="1"/>
+    <file name="utils.js" path="C:\Users\v.ishchenko\OneDrive - ООО КАРО Фильм Менеджмент\Рабочий стол\GB-JS-Ischenko\Lesson3\test\src\utils.js">
+      <metrics statements="15" coveredstatements="15" conditionals="12" coveredconditionals="12" methods="1" coveredmethods="1"/>
+      <line num="41" count="5" type="stmt"/>
+      <line num="42" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="43" count="1" type="stmt"/>
+      <line num="44" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="45" count="1" type="stmt"/>
+      <line num="46" count="3" type="cond" truecount="4" falsecount="0"/>
+      <line num="47" count="1" type="stmt"/>
+      <line num="48" count="2" type="stmt"/>
+      <line num="50" count="2" type="cond" truecount="4" falsecount="0"/>
+      <line num="51" count="1" type="stmt"/>
+      <line num="52" count="2" type="stmt"/>
+      <line num="55" count="1" type="stmt"/>
+      <line num="56" count="2" type="stmt"/>
+      <line num="60" count="3" type="stmt"/>
+      <line num="63" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
