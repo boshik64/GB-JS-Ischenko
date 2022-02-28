@@ -3,41 +3,13 @@
     <div class="container">
       <div class="basket__content">
         <div class="basket__items">
-          <div class="basket__item">
-            <img src="img/basket/basket1.png" alt="" />
-            <div class="item__info">
-              <h2>
-                MANGO PEOPLE <br />
-                T-SHIRT
-              </h2>
-              <p>Price: <span>$300</span></p>
-              <p>Color: Red</p>
-              <p>Size: Xl</p>
-              <p>Quantity:<input type="number" value="2" /></p>
-
-              <svg>
-                <use xlink:href="#close"></use>
-              </svg>
-            </div>
-          </div>
-
-          <div class="basket__item">
-            <img src="img/basket/basket2.png" alt="" />
-            <div class="item__info">
-              <h2>
-                MANGO PEOPLE <br />
-                T-SHIRT
-              </h2>
-              <p>Price: <span>$300</span></p>
-              <p>Color: Red</p>
-              <p>Size: Xl</p>
-              <p>Quantity:<input type="number" value="2" /></p>
-
-              <svg>
-                <use xlink:href="#close"></use>
-              </svg>
-            </div>
-          </div>
+          <BasketItemComponent
+            class="basket__item"
+            v-for="item of cart"
+            v-bind:key="item.id"
+            v-bind:data="item"
+            v-on:click="onRemoveBtnClk(item.id)"
+          ></BasketItemComponent>
 
           <div class="items__buttons">
             <a href="#" class="item__btn">CLEAR SHOPPING CART</a>
@@ -72,8 +44,22 @@
 </template>
 
 <script>
+import BasketItemComponent from ".././BasketItemComponent.vue";
+
 export default {
-  name: "BasketComponent",
+  components: {
+    BasketItemComponent,
+  },
+  computed: {
+    cart() {
+      return this.$store.getters.getCart;
+    },
+  },
+  methods: {
+    onRemoveBtnClk(id) {
+      this.$store.dispatch("removeFromCart", id);
+    },
+  },
 };
 </script>
 
@@ -83,72 +69,6 @@ export default {
   margin-bottom: 128px;
   display: flex;
   justify-content: space-between;
-}
-
-.basket__item {
-  width: 652px;
-  display: flex;
-  margin-bottom: 40px;
-  // border: 1px solid #EAEAEA;
-  box-shadow: 17px 19px 24px 0px #00000021;
-  position: relative;
-  transition: box-shadow 0.1s linear;
-
-  &:hover {
-    box-shadow: 24px 26px 26px 15px #00000021;
-  }
-}
-
-.item__info {
-  margin-left: 30px;
-  margin-top: 22px;
-
-  svg {
-    width: 18px;
-    height: 18px;
-    position: absolute;
-    top: 28px;
-    right: 22px;
-    transition: transform 0.2s linear;
-  }
-
-  svg:hover {
-    transform: scale(1.2);
-  }
-
-  h2 {
-    font-size: 24;
-    font-weight: 400;
-    line-height: 28.8px;
-    color: #222222;
-    margin-bottom: 42px;
-  }
-
-  p {
-    margin-bottom: 6px;
-    font-size: 22px;
-    line-height: 26px;
-    font-weight: 400;
-    color: #575757;
-
-    span {
-      color: #f16d7f;
-    }
-
-    input {
-      margin-left: 24px;
-      height: 25px;
-      width: 44px;
-      text-align: center;
-      border: 1px solid #eaeaea;
-    }
-
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-  }
 }
 
 .items__buttons {

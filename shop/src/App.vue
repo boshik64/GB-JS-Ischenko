@@ -16,11 +16,11 @@ export default {
   components: {
     HeaderComponent,
     FeedbackComponent,
-    FooterComponent,
+    FooterComponent
   },
   mounted() {
-    this.$store.dispatch("loadCatalog");
-    this.$store.dispatch("loadCart");
+    this.$store.dispatch('loadCatalog')
+    this.$store.dispatch('loadCart')
   },
 };
 </script>

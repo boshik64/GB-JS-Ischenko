@@ -7,7 +7,6 @@
     <h3 class="item__subtitle">{{ data.subtitle }}</h3>
     <p class="item__text">{{ data.price }}</p>
     <!-- </router-link> -->
-
     <div class="products__mask">
       <button class="mask__link" v-on:click="onBuyBtnClk(item)">
         <img
@@ -25,16 +24,6 @@
 export default {
   name: "ProductItemComponent",
   props: ["data"],
-  computed: {
-    catalog() {
-      return this.$store.getters.getCatalog;
-    },
-  },
-  methods: {
-    onBuyBtnClk(product) {
-      this.$store.dispatch("addToCart", product);
-    },
-  },
 };
 </script>
 

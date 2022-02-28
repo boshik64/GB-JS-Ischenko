@@ -13,6 +13,7 @@
           v-for="item of catalog"
           v-bind:key="item.id"
           v-bind:data="item"
+           v-on:click="onBuyBtnClk(item)"
         ></ProductItemComponent>
       </div>
 
@@ -34,7 +35,11 @@ export default {
       return this.$store.getters.getCatalog;
     },
   },
-  
+  methods: {
+    onBuyBtnClk(product) {
+      this.$store.dispatch("addToCart", product);
+    },
+  },
 };
 </script>
 
