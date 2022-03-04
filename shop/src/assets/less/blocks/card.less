@@ -1,0 +1,179 @@
+// main: ../style.less
+
+.card {
+    margin-bottom: 70px;
+}
+
+.card__box {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    margin-top: -45px;
+    background: @white-default;
+    border: solid 1px;
+    border-color: #F7F7F7;
+}
+
+.card__inner {
+    max-width: 641px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.card__item--up {
+    text-align: center;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.card__category {
+
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: @pink-default;
+}
+
+.card__dash {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.card__name {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #4D4D4D;
+}
+
+.card__description {
+    padding-top: 48px;
+    padding-bottom: 32px;
+
+    margin-left: 42px;
+
+    max-width: 550px;
+
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #5E5E5E;
+}
+
+.card__price {
+    padding-bottom: 65px;
+
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #EF5B70;
+}
+
+.card__item--down {
+    padding-top: 65px;
+}
+
+.card__filter {
+    display: flex;
+    justify-content: center;
+}
+
+.filter__item {
+    display: flex;
+    padding-left: 23px;
+}
+
+.filter__item:first-child {
+    padding-left: 0;
+}
+
+.filter__name {
+
+    margin-right: 9px;
+
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #6F6E6E;
+}
+
+.card__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+
+    margin-top: 48px;
+    margin-left: 225px;
+
+
+    padding: 14.62px 56.5px 8.57px 23.5px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    width: 211px;
+    height: 47px;
+    border: 1px solid @pink-default;
+
+    transition: background .2s linear;
+}
+
+.card__button:hover {
+    background:
+        rgba(239, 91, 112, .05);
+}
+
+.card__img {
+    width: 26px;
+    height: 24px;
+    fill: #EF5B70;
+}
+
+.card__text {
+    margin-left: 23px;
+
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: @pink-default;
+}
+
+
+/*mobile*/
+@media (max-width: 766px) {
+    .card__category {
+        margin-top: 64px;
+    }
+
+    .card__dash {
+        margin-bottom: 27px;
+    }
+
+    .card__description {
+        margin: 0 25px;
+    }
+
+    .card__item--down {
+        text-align: -webkit-center;
+
+        .card__filter {
+            .filter__item {
+                .filter__name {
+                    font-weight: normal;
+                    font-size: 10px;
+                    line-height: 12px;
+                }
+            }
+        }
+    }
+
+    .card__button {
+        margin-left: 0;
+    }
+}

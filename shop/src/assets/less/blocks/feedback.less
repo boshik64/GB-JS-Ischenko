@@ -1,0 +1,121 @@
+// main: ../style.less
+
+
+.feedback {
+    padding-top: 87px;
+    padding-bottom: 126px;
+    background: rgba(244, 244, 244, 0.7) url("../../../../public/img/feedback/feedback__bg.jpg") center no-repeat;
+    
+    background-size: cover;
+
+    text-align: center;
+}
+
+.feedback__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.feedback__review {
+    width: 360px;
+}
+
+.feedback__text {
+    padding-top: 30px;
+
+    
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    font-style: italic;
+
+    color: #222224;
+
+}
+
+.feedback__subscribe {
+    width: 557px;
+}
+
+.feedback__title {
+    padding-top: 63px;
+    padding-bottom: 3px;
+
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 40px;
+
+    color: #222224;
+}
+
+.feedback__subtitle {
+    padding-bottom: 32px;
+    
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+
+    color: #222224;
+}
+
+.feedback__input {
+    width: 256px;
+    padding: 18px 64px 16px 22px;
+    margin-right: 0;
+
+    border-radius: 22px 0 0 22px;
+    border: 0;
+    outline: none;
+
+    color: #222224;
+    opacity: 0.67;
+
+    background: #E1E1E1;
+}
+
+.feedback__button {
+    margin-left: -4px;
+    width: 100px;
+    padding: 18px 7px 16px 8px;
+
+    border-radius: 0 22px 22px 0;
+    border: 0;
+    cursor: pointer;
+
+    color: @white-default;
+
+    background: @pink-default;
+
+    transition: background .2s linear ;
+}
+
+.feedback__button:hover {
+    background: #E05C6E;
+}
+
+/* tablet */
+@media (max-width: 1200px) {
+    .feedback{
+        padding-top: 64px;
+        padding-bottom: 140px;
+        background: rgba(244,244,244,0.7) url("../../../../public/img/feedback/feedback__bg.jpg") no-repeat;
+        background-size: cover;
+    }
+    .feedback__inner{
+        div{
+            margin: 0 auto;
+        }
+    }
+    .feedback__title {
+        padding-top: 48px;
+    }
+}
+
+/*mobile*/
+@media (max-width: 766px) {
+    .feedback{
+        padding-bottom:109px ;
+    }
+}

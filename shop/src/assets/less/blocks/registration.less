@@ -1,0 +1,185 @@
+// main: ../style.less
+
+
+.registration {
+    padding-top: 64px;
+    padding-bottom: 96px;
+}
+
+.registration__inner {
+    display: flex;
+}
+
+.registration__item--left {
+    max-width: 360px;
+    width: 100%;
+}
+
+.registration__headline {
+    font-weight: 300;
+    font-size: @default-size;
+    line-height: 19px;
+
+    color: #222222;
+}
+
+.reg-input {
+    margin-top: 20px;
+    padding: 12.5px 270px 15.5px 16.73px;
+
+    height: 45px;
+    width: 360px;
+
+    font-weight: 300;
+    font-size: 13px;
+    line-height: @default-size;
+
+    color: #B1B1B1;
+}
+
+.registration__text {
+    padding-top: @default-size;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: @default-size;
+
+    color: #B1B1B1;
+}
+
+.registration__item--right {
+    margin-left: 128px;
+}
+
+.registration__title {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #000000;
+}
+
+.registration__subtitle {
+    padding-top: 22px;
+    padding-bottom: 21px;
+
+    width: 652px;
+
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #000000;
+}
+
+.registration__list {
+    list-style-type: none;
+}
+
+.reg-list__item {
+    margin-bottom: @default-size;
+
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #000000
+}
+
+.reg-list__img {
+    margin-right: 24px;
+}
+
+.registration__sex {
+    margin: 33px 0;
+    display: flex;
+
+    label {
+        margin-right: 20px;
+        font-size: 11px;
+        font-weight: 300;
+        line-height: 13, 2px;
+        color: #000000;
+
+        input {
+            margin-right: 10px;
+        }
+    }
+}
+
+.registration__link {
+    margin-top: 40px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+
+    padding: 16px 30px;
+    border: 1px solid @pink-default;
+
+    text-align: center;
+
+
+    text-decoration: none;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.8px;
+
+    background: @pink-default;
+    color: @white-default;
+
+
+
+    transition: background .3s linear;
+
+    img {
+        margin-left: 20px;
+    }
+}
+
+.registration__link:hover {
+    color: #F26376;
+    background-color: @white-default;
+}
+
+
+/* tablet */
+@media (max-width: 1200px) {
+    .registration {
+        padding-top: 46px;
+    }
+
+    .registration__inner {
+        .registration__item--right {
+            margin-left: 20px;
+
+            .registration__title {
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 19px;
+            }
+
+            .registration__subtitle {
+                padding-bottom: 22px;
+                padding-top: 32px;
+                width: 100%;
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 19px;
+            }
+
+            .registration__list {
+                li {
+                    font-weight: 300;
+                    font-size: 16px;
+                    line-height: 19px;
+                    img{
+                        margin-right: 23px;
+                    }
+                    span{
+                        margin-left: 43.5px;
+                    }
+                }
+            }
+        }
+    }
+}

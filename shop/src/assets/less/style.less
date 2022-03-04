@@ -1,0 +1,50 @@
+// compress: true
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/*Vars*/
+@import "./vars.less";
+
+/*Blocks*/
+@import "blocks/header.less";
+@import "blocks/promo.less";
+@import "blocks/categories.less";
+@import "blocks/products.less";
+@import "blocks/features.less";
+@import "blocks/feedback.less";
+@import "blocks/footer.less";
+@import "blocks/social.less";
+@import "blocks/menu.less";
+@import "blocks/card.less";
+@import "blocks/illustration.less";
+@import "blocks/registration.less";
+@import "blocks/filter.less";
+@import "blocks/pagination.less";
+@import "blocks/basket.less";
+
+/* tablet */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 16px;
+    }
+}
+/*mobile*/
+@media (max-width: 766px) {
+    .container {
+        padding: 0 8px;
+    }
+}
