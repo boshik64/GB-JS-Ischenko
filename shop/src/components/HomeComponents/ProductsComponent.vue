@@ -13,7 +13,7 @@
           v-for="item of catalog"
           v-bind:key="item.id"
           v-bind:data="item"
-           v-on:click="onBuyBtnClk(item)"
+           
         ></ProductItemComponent>
       </div>
 
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import ProductItemComponent from ".././ProductItemComponent.vue";
+import ProductItemComponent from "./ProductItemComponent.vue";
 
 export default {
   components: {
@@ -35,66 +35,10 @@ export default {
       return this.$store.getters.getCatalog;
     },
   },
-  methods: {
-    onBuyBtnClk(product) {
-      this.$store.dispatch("addToCart", product);
-    },
-  },
+  // methods: {
+  //   onBuyBtnClk(product) {
+  //     this.$store.dispatch("addToCart", product);
+  //   },
+  // },
 };
 </script>
-
-<style lang='less'>
-.products {
-  padding-top: 31px;
-  padding-bottom: 96px;
-
-  text-align: center;
-}
-
-.poducts__text {
-  padding-bottom: 48px;
-  text-align: center;
-}
-
-.products__title {
-  padding-bottom: 6px;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 36px;
-  color: #222222;
-}
-
-.products__subtitle {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  color: #9f9f9f;
-}
-
-.products__inner {
-  margin-top: 19px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 19px;
-}
-
-/* tablet */
-@media (max-width: 1200px) {
-  .products {
-    padding-top: 101px;
-    padding-bottom: 64px;
-  }
-
-  .products__item:nth-of-type(3) {
-    display: none;
-  }
-}
-
-/*mobile*/
-@media (max-width: 766px) {
-  .products {
-    padding-top: 0;
-  }
-}
-</style>

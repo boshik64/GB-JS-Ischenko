@@ -8,15 +8,29 @@ export default createStore({
   },
   getters: {
     getCatalog: (state) => [...state.catalog],
-    getCart: (state) => [...state.cart]
+    getCart: (state) => [...state.cart],
+    getCartCount: (state) => state.cart.reduce((acc, item) => acc + item.quantity, 0),
+    getTotal: (state) => state.cart.reduce((acc, item) => acc + item.price*item.quantity, 0)
   },
   mutations: {
     setCatalog: (state, catalog) => { state.catalog = catalog },
     setCart: (state, cart) => { state.cart = cart },
-    addToCart: (state, product) => { state.cart.push(product) },
+    addToCart: (state, product) => {
+      const existProduct = state.cart.find(item => item.id == product.id)
+      if (existProduct) {
+        existProduct.quantity++
+      } else {
+        state.cart.push(Object.assign({ quantity: 1 }, product))
+      }
+
+    },
     removeFromCart: (state, id) => {
-      const idx = state.cart.findIndex((item) => item.id === id) 
+      const idx = state.cart.findIndex((item) => item.id === id)
       state.cart.splice(idx, 1);
+    },
+    setQuantity: (state, { id, quantity }) => {
+      const product = state.cart.find(item => item.id == id)
+      product.quantity = quantity
     }
   },
   actions: {
@@ -51,6 +65,16 @@ export default createStore({
       })
         .then(() => {
           commit('removeFromCart', id);
+        })
+    },
+    setQuantity({ commit }, { id, quantity }) {
+      return fetch(`/api/v1/cart/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ quantity: quantity })
+      })
+        .then(() => {
+          commit('setQuantity', { id, quantity });
         })
     }
   },

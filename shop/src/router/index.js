@@ -4,8 +4,8 @@ import Home from '../views/Home.vue'
 import Cart from '../views/Cart.vue'
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/cart', component: Cart },
+  { path: '/', Name: 'Home', component: Home },
+  { path: '/cart', Name: 'Cart', component: Cart },
 ]
 
 const router = createRouter({

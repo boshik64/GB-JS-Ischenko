@@ -8,7 +8,6 @@
             v-for="item of cart"
             v-bind:key="item.id"
             v-bind:data="item"
-            v-on:click="onRemoveBtnClk(item.id)"
           ></BasketItemComponent>
 
           <div class="items__buttons">
@@ -31,8 +30,13 @@
 
           <div class="backet__coast">
             <div class="backet__container">
-              <p>SUB TOTAL <span>$900</span></p>
-              <p>GRAND TOTAL <span>$900</span></p>
+              <p v-for="item of cart" v-bind:key="item.id" v-bind:data="item">
+                {{item.title}} <span>({{ item.quantity }})</span><span>${{ item.price }}</span>
+              </p>
+
+              <p>
+                GRAND TOTAL <span>${{ totalPrice }}</span>
+              </p>
               <hr />
               <a href="#"> PROCEED TO CHECKOUT </a>
             </div>
@@ -44,251 +48,20 @@
 </template>
 
 <script>
-import BasketItemComponent from ".././BasketItemComponent.vue";
+import BasketItemComponent from "./BasketItemComponent.vue";
 
 export default {
   components: {
     BasketItemComponent,
   },
+  props: ["data"],
   computed: {
     cart() {
       return this.$store.getters.getCart;
     },
-  },
-  methods: {
-    onRemoveBtnClk(id) {
-      this.$store.dispatch("removeFromCart", id);
+    totalPrice() {
+      return this.$store.getters.getTotal;
     },
   },
 };
 </script>
-
-<style lang='less'>
-.basket__content {
-  margin-top: 96px;
-  margin-bottom: 128px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.items__buttons {
-  display: flex;
-  justify-content: space-between;
-
-  a {
-    text-decoration: none;
-    color: #000000;
-    font-size: 14px;
-    line-height: 16.8px;
-    font-weight: 300;
-    padding: 17px 40px;
-    border: 1px solid #a4a4a4;
-    transition: box-shadow 0.1s linear;
-
-    &:hover {
-      box-shadow: 7px 9px 14px 0px #00000021;
-    }
-  }
-}
-
-.basket__inputs {
-  margin-bottom: 57px;
-
-  h2 {
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 19px;
-    color: #222222;
-    margin-bottom: 20px;
-  }
-
-  input {
-    width: 360px;
-    height: 45px;
-    margin-bottom: 20px;
-    border: 1px solid #a4a4a4;
-    padding: 17px;
-  }
-
-  input[type="button"] {
-    margin-bottom: 0;
-    width: 101px;
-    height: 35px;
-    font-weight: 300;
-    font-size: 11px;
-    line-height: 13px;
-    cursor: pointer;
-    color: #4a4a4a;
-    text-align: center;
-    padding: 0;
-    background-color: #00000000;
-    border: 1px solid #a4a4a4;
-
-    transition: box-shadow 0.2s linear;
-    transition: background-color 0.2s linear;
-
-    &:hover {
-      background-color: #00000011;
-      box-shadow: 7px 9px 14px 0px #00000021;
-    }
-  }
-}
-
-.backet__coast {
-  background-color: #f5f3f3;
-  height: 214px;
-  width: 360px;
-
-  .backet__container {
-    padding: 44px;
-    text-align: center;
-
-    p:nth-of-type(2) {
-      margin-bottom: 21px;
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 19px;
-
-      color: #222222;
-
-      span {
-        color: #f16d7f;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 19px;
-      }
-    }
-
-    p {
-      text-align: right;
-      margin-bottom: 12px;
-      font-weight: normal;
-      font-size: 11px;
-      line-height: 13px;
-
-      color: #4a4a4a;
-
-      span {
-        margin-left: 20px;
-      }
-    }
-
-    hr {
-      border-color: #e2e2e2;
-    }
-
-    a {
-      width: 100%;
-      margin-top: 17px;
-      display: inline-block;
-      vertical-align: top;
-      cursor: pointer;
-
-      padding: 16px 30px;
-      border: 1px solid #f16d7f;
-
-      text-align: center;
-
-      text-decoration: none;
-
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 16.8px;
-
-      background: #f16d7f;
-      color: #fff;
-
-      transition: background 0.3s linear;
-
-      &:hover {
-        color: #f26376;
-        background-color: #fff;
-      }
-    }
-  }
-}
-
-/* tablet */
-@media (max-width: 1200px) {
-  .basket__content {
-    margin-top: 59px;
-    display: block;
-
-    .basket__items {
-      .basket__item {
-        margin: 0 auto;
-        margin-bottom: 40px;
-      }
-
-      .items__buttons {
-        margin-top: 62px;
-      }
-    }
-  }
-
-  .basket__form {
-    margin-top: 64px;
-    display: flex;
-    justify-content: space-between;
-
-    .basket__inputs {
-      margin-bottom: 0;
-    }
-
-    .backet__coast {
-      margin-top: 39px;
-    }
-  }
-}
-
-/*mobile*/
-@media (max-width: 766px) {
-  .basket__item {
-    width: 358px;
-    height: 188px;
-  }
-
-  .item__info {
-    margin-left: 17px;
-    margin-top: 13px;
-
-    h2 {
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 19px;
-      margin-bottom: 25px;
-    }
-
-    p {
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 17px;
-      margin-bottom: 4px;
-    }
-
-    svg {
-      width: 9px;
-      height: 9px;
-      top: 17px;
-      right: 12px;
-    }
-  }
-
-  .items__buttons {
-    a {
-      padding: 9px 18px;
-      font-weight: normal;
-      font-size: 12px;
-      line-height: 14px;
-
-      text-align: center;
-    }
-  }
-  .basket__form {
-    display: block;
-  }
-  .basket__content {
-    margin-bottom: 96px;
-  }
-}
-</style>

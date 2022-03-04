@@ -1,0 +1,51 @@
+// main: ../style.less
+
+
+
+footer {
+    padding-top: 24px;
+    padding-bottom: 23px;
+
+    background: #222224;
+}
+
+.footer__innner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer__copyright {
+    margin-top: 6px;
+
+    font-weight: 400;
+    font-size: @default-size;
+    line-height: 19px;
+
+    color: #FBFBFB;
+}
+
+.copyright__link {
+    text-decoration: none;
+    color: @white-default;
+    transition: 0.3s linear;
+}
+
+.copyright__link:hover {
+    color: #f08694 ;
+}
+
+/*mobile*/
+@media (max-width: 766px) {
+    .footer{
+        padding-top: 43px;
+        padding-bottom: 9px;
+    }
+    .footer__innner{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .footer__copyright {
+        margin-top: 40px;
+    }
+}

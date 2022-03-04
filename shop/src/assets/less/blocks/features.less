@@ -1,0 +1,65 @@
+// main: ../style.less
+
+
+.features {
+    padding-top: 104px;
+    padding-bottom: 104px;
+    text-align: center;
+    background: #222224;
+}
+
+.features__inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.features__item {
+    width: 360px;
+    margin-left: 30px;
+}
+
+.features__item:first-child {
+    margin-left: 0;
+}
+
+.features__title {
+    margin-top: 28px ;
+    margin-bottom: @default-size ;
+    font-weight: 400;
+    font-size: 19.96px;
+    line-height: 24px;
+    color: #FBFBFB;
+}
+
+.features__title--02 {
+    margin-top: 21px;
+}
+
+.features__title--03 {
+    margin-top: 27px;
+}
+
+.features__text {
+    padding: 0 30px;
+    width: 360px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FBFBFB;
+}
+
+@media (max-width: 1200px) {
+    .features{
+        padding: 48px 0 64px 0;
+    }
+    .features__inner{
+        display: block;
+        .features__item{
+            margin: 0 auto;
+            margin-bottom: 48px;
+        }
+        .features__item:last-child{
+            margin-bottom: 0;
+        }
+    }
+}

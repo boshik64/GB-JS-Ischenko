@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <!-- <PromoComponent></PromoComponent> -->
-    <!-- <CategoriesComponent></CategoriesComponent> -->
+    <PromoComponent></PromoComponent>
+    <CategoriesComponent></CategoriesComponent>
     <ProductsComponent></ProductsComponent>
-    <!-- <FeaturesComponent></FeaturesComponent> -->
+    <FeaturesComponent></FeaturesComponent>
   </div>
 </template>
 
@@ -20,7 +20,6 @@ export default {
     ProductsComponent,
     FeaturesComponent,
   },
-
 };
 </script>
 
