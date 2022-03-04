@@ -65,7 +65,7 @@
             </ul>
           </span>
 
-          <router-link class="header__item--registration" to="/"
+          <router-link class="header__item--registration" to="/registration"
             ><img src="img/header/header__profile.svg" alt=""
           /></router-link>
           <router-link class="header__item--basket" to="/cart">
